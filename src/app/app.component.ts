@@ -12,4 +12,5 @@ import { SkidComponent } from './skid/skid.component';
 })
 export class AppComponent {
   title = 'digital-forms-bootstrap';
+  skids = Array(10).fill(0);  // Creates an array with 10 elements
 }
