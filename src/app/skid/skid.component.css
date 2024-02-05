@@ -1,9 +1,24 @@
 .card {
     margin: 10px;
-    padding: 10px;
+    padding: 0px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 2px 2px 2px #ccc;
     background-color: #f8f8f8;
     width: 18rem;
+}
+.card-title {
+    background-color: #b3d7ff;  /* light blue */
+    color: rgb(34, 34, 34);  /* adjust text color as needed */
+  }
+.btn {
+    border: none;
+}
+.full-width {
+    width: 100%;
+}
+.label-column {
+    width: 100px;  /* adjust as needed */
+    flex: none;    /* prevents the column from growing or shrinking */
+    color:rgb(34, 34, 34)
 }

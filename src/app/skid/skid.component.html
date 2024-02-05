@@ -1,7 +1,30 @@
 <div class="card">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+  <h5 class="card-title" >Used Residential Electronics</h5>
+  <div class="card-body p-0">
+    <table class="table p-0 m-0" >
+      <tbody>
+        <tr>
+          <th scope="row">Skid #</th>
+          <td>{{ skid.number }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Type</th>
+          <td>{{ skid.type ? skid.type: '' }}</td>
+        </tr>
+      <!--   <tr>
+          <th scope="row">Category</th>
+          <td>CED</td>
+        </tr>
+        <tr>
+          <th scope="row">Packaging</th>
+          <td>Gaylord</td>
+        </tr> -->
+      </tbody>
+    </table>
     </div>
-</div>
+</div> 
+
+<!-- <h5 class="card-title">Card title</h5>
+<span  class="col label-column">{{ skid.type ? 'Type: ': 'none' }}</span>
+<button (click)="openTypeDialog()" class="border-0 full-width text-start">{{ skid.type }}</button>
+ -->
