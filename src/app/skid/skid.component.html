@@ -9,7 +9,8 @@
         </tr>
         <tr>
           <th scope="row">Type</th>
-          <td>{{ skid.type ? skid.type: '' }}</td>
+          <td><button (click)="openTypeDialog()">{{ skid.type ? skid.type: ''}} </button></td>
+         
         </tr>
       <!--   <tr>
           <th scope="row">Category</th>

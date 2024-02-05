@@ -27,11 +27,11 @@ export class SkidComponent {
     });
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+/*   ngOnChanges(changes: SimpleChanges) {
     if (changes['skid']) {
       this._skid.next(this.skid);
     }
-  }
+  } */
   
   updateSkid(updatedSkid: Skid) {
     let skid = this._skid.getValue();
