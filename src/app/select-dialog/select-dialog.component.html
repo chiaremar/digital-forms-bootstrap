@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Select an item</h1>
+<div mat-dialog-content>
+  <mat-list>
+    <mat-list-item *ngFor="let option of data.options" (click)="selectOption(option)">
+      {{option}}
+    </mat-list-item>
+  </mat-list>
+</div>

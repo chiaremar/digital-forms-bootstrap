@@ -1,5 +1,7 @@
 import { Component, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { MatDialog } from '@angular/material/dialog';
+import { SelectDialogComponent } from '../select-dialog/select-dialog.component';
 
 export interface Skid {
   number: number;
@@ -10,7 +12,7 @@ export interface Skid {
 @Component({
   selector: 'skid',
   standalone: true,
-  imports: [],
+  imports: [SelectDialogComponent],
   templateUrl: './skid.component.html',
   styleUrl: './skid.component.css'
 })
@@ -21,7 +23,7 @@ export class SkidComponent {
   private _skid = new BehaviorSubject<Skid>(this.skid);
   skid$ = this._skid.asObservable();
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     this.skid$.subscribe(skid => {
       this.updateSkid(skid)
     });
@@ -45,10 +47,20 @@ export class SkidComponent {
   }
 
   openTypeDialog(): void {
-    // open a dialog to select the type
+    const dialogRef = this.dialog.open(SelectDialogComponent, {
+      width: '250px',
+      data: {options: ['Computers', 'Printers', 'Monitors', 'Flat TVs', 'CRT TVs', 'Projector TV', 'Mixed']}
+    });
 
-    console.log('openTypeDialog');
-
-  }
+    dialogRef.afterClosed().subscribe(result => {
+      // if (result) {
+      //   this.onSkidChange();
+      // }
+      if (result) {
+        this.skid.type = result;
+        this.updateSkid(this.skid);
+      }
+    });
+  } 
   
 }
