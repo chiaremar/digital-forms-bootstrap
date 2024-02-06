@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { SkidComponent } from './skid/skid.component';
-import { Skid } from './skid/skid.component';
+import { Skid } from '../../node_modules/take2-digital-forms-data-model';
 
 @Component({
   selector: 'app-root',

@@ -4,14 +4,14 @@ import { MatDialog } from '@angular/material/dialog';
 import { SelectDialogComponent } from '../select-dialog/select-dialog.component';
 import { FormsModule } from '@angular/forms';
 import { NumberPadComponent } from '../number-pad/number-pad.component';
+import { Skid } from '../../../node_modules/take2-digital-forms-data-model';
 
-
-export interface Skid {
+/* export interface Skid {
   number: number;
   type: string;
   packaging: string;
   grossWeight: string; // use input text with pattern="^\d*(\.\d{0,2})?$"
-}
+} */
 
 @Component({
   selector: 'skid',
