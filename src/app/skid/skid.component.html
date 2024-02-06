@@ -1,5 +1,5 @@
 <div class="card">
-  <h5 class="card-title" >Used Residential Electronics</h5>
+  <h4 class="card-title" >Used Residential Electronics</h4>
   <div class="card-body p-0">
     <table class="table p-0 m-0" >
       <tbody>
@@ -20,12 +20,19 @@
           <th scope="row">Packaging</th>
           <td>Gaylord</td>
         </tr> -->
+        <tr>
+          <th scope="row">Gross Weight</th>
+          <td>
+            <!-- <form> -->
+              <div class="form-group">
+                <input (focus)="showNumberPad()" type="text" class="form-control" id="grossWeightField" [(ngModel)]="skid.grossWeight">
+                <number-pad [hidden]="!numberPadVisible" (numberClicked)="addNumber($event)" (doneClicked)="doneNumber($event)"></number-pad>
+              </div>
+            <!-- </form> -->
+        </td>
+        </tr>
+        
       </tbody>
     </table>
     </div>
-</div> 
-
-<!-- <h5 class="card-title">Card title</h5>
-<span  class="col label-column">{{ skid.type ? 'Type: ': 'none' }}</span>
-<button (click)="openTypeDialog()" class="border-0 full-width text-start">{{ skid.type }}</button>
- -->
+</div>

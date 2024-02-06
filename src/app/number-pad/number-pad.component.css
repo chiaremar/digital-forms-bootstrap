@@ -1,0 +1,10 @@
+#number-pad {
+    display: flex;
+    flex-wrap: wrap;
+    width: 120px;
+  }
+  
+  .number {
+    width: 40px;
+    height: 40px;
+  }

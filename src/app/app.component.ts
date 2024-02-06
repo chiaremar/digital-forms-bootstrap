@@ -15,11 +15,12 @@ import { Skid } from './skid/skid.component';
 
 export class AppComponent {
   title = 'digital-forms-bootstrap';
-  numberOfSkids = 2; // 16; 
+  numberOfSkids = 12; 
   skids: Skid[] = Array.from({length: this.numberOfSkids}, (_, i) => (
     { number: i + 1, 
       type: '',
-      packaging: ''
+      packaging: '',
+      grossWeight: ''
     }
   ))
 
