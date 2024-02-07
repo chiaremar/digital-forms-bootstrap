@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
 
-To build/run: builds and runs the app in a development server on localhost:4200
+To build/run: builds and runs the app in a development server on localhost:4200  
 Note- before starting the client, start the server in [Digital Forms Server](https://github.com/chiaremar/digital-forms-server.git)
 
 $ git clone https://github.com/chiaremar/digital-forms-bootstrap.git  
