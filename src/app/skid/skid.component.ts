@@ -6,13 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { NumberPadComponent } from '../number-pad/number-pad.component';
 import { Skid } from '../../../node_modules/take2-digital-forms-data-model';
 
-/* export interface Skid {
-  number: number;
-  type: string;
-  packaging: string;
-  grossWeight: string; // use input text with pattern="^\d*(\.\d{0,2})?$"
-} */
-
 @Component({
   selector: 'skid',
   standalone: true,
@@ -33,12 +26,6 @@ export class SkidComponent {
       this.updateSkid(skid)
     });
   }
-
-/*   ngOnChanges(changes: SimpleChanges) {
-    if (changes['skid']) {
-      this._skid.next(this.skid);
-    }
-  } */
   
   updateSkid(updatedSkid: Skid) {
     let skid = this._skid.getValue();
@@ -46,9 +33,6 @@ export class SkidComponent {
       this._skid.next(updatedSkid);
     }
     this.skidChanged.emit(this.skid);
-    //not sure why this is printing more than expected
-    //console.log('skid:', skid);
-
   }
 
   showNumberPad() {
@@ -59,16 +43,14 @@ export class SkidComponent {
     if (num === '.' && this.skid.grossWeight.includes('.')) {
       return;
     }
-    if (num === 'done' && this.numberPadVisible) {
-      this.numberPadVisible = false;
-      return;
-    }
+
     this.skid.grossWeight += num;
   } 
 
   doneNumber(done: boolean) {
     if (done && this.numberPadVisible) {
       this.numberPadVisible = false;
+      this.updateSkid(this.skid);
       return;
     }
    
@@ -80,9 +62,6 @@ export class SkidComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // if (result) {
-      //   this.onSkidChange();
-      // }
       if (result) {
         this.skid.type = result;
         this.updateSkid(this.skid);
